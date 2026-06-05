@@ -33,7 +33,7 @@
     step="{{ variant.quantity_rule.increment }}"
     {% # theme-check-enable %}
     aria-label="{{ 'products.product.quantity.input_label' | t: product: variant.title | escape }}"
-    id="Quantity-{{ variant.id }}"
+    id="{% if input_id != blank %}{{ input_id }}{% else %}Quantity-{{ variant.id }}{% endif %}"
     data-index="{{ variant.id }}"
     data-target="quantity-input-{{ variant.id }}"
   >
